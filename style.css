@@ -1,0 +1,262 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap");
+
+:root {
+  --main-color: #191919;
+  --text-color: #dddddd;
+  --second-color: #2eff63;
+  --df-margin: 10px;
+  --df-padding: 10px;
+  --df-radius: 5px;
+
+  --df-border: 5px solid var(--second-color);
+  scroll-behavior: smooth;
+}
+body {
+  background: var(--main-color);
+  color: var(--text-color);
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  font-family: "Roboto", sans-serif;
+}
+
+body,
+.codPin,
+.screen,
+.keyboard,
+.row,
+.btn,
+.fnc,
+.b {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  max-height: 100vh;
+}
+
+.bg {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: url("tlo.jpg");
+  background-size: auto 100%;
+  background-position-x: center;
+  filter: blur(3px) brightness(0.7);
+}
+
+.codPin {
+  transform: scale(0.6);
+  padding: 50px 0;
+  width: 400px;
+  height: 600px;
+  background: url("tlo7.jpg");
+  background-size: cover;
+  background-position-x: center;
+  flex-direction: column;
+  border-radius: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  border: 3px solid #2eff63;
+  user-select: none;
+  position: relative;
+}
+
+.codPin::before {
+  content: "";
+  position: absolute;
+  width: 4px;
+  height: 100px;
+  right: -5px;
+  top: 70px;
+  border-radius: 0 3px 3px 0;
+  background: #2eff63;
+}
+
+.power {
+  padding: 23px;
+  position: absolute;
+  width: 4px;
+  height: 50px;
+  right: -3px;
+  transform: translate(50%);
+  top: 200px;
+}
+
+.power .button {
+  width: 4px;
+  height: 50px;
+  border-radius: 0 3px 3px 0;
+  background: #2eff63;
+}
+
+.screen {
+  width: 10em;
+  padding: 20px 14px;
+  font-size: 35px;
+  letter-spacing: 15px;
+  box-sizing: border-box;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 500;
+  text-align: center;
+  justify-content: center;
+  flex-direction: column;
+  overflow: hidden;
+  height: 100px;
+  position: relative;
+}
+.screen p {
+  letter-spacing: 5px;
+  font-size: 30px;
+  display: block;
+  padding: 0;
+  margin: 0;
+}
+
+.trialsLeft {
+  text-transform: uppercase;
+  color: #f74141;
+  position: absolute;
+  top: 60px;
+  font-size: 15px;
+  letter-spacing: 10px;
+  /* font-weight: 600; */
+  display: block;
+}
+
+.wrong,
+.correct {
+  position: relative;
+}
+
+.wrong {
+  color: #f74141;
+  animation: wrong 0.5s;
+}
+.wrong::before,
+.correct::before {
+  content: "Incorrect";
+  text-transform: uppercase;
+  color: #f74141;
+  position: absolute;
+  bottom: 10px;
+  font-size: 13px;
+}
+.correct::before {
+  content: "Correct";
+  color: #2eff63;
+}
+.correct {
+  color: #2eff63;
+  animation: correct 0.5s;
+}
+
+@keyframes wrong {
+  0% {
+    transform: translateX(0px);
+  }
+  20% {
+  }
+  40% {
+    transform: translateX(-15px);
+  }
+  60% {
+    transform: translateX(0px);
+  }
+  80% {
+    transform: translateX(15px);
+  }
+  100% {
+    transform: translateX(0px);
+  }
+}
+
+@keyframes correct {
+  0% {
+    transform: translateY(0px);
+  }
+  20% {
+  }
+  40% {
+    transform: translateY(-15px);
+  }
+  60% {
+    transform: translateY(0px);
+  }
+  80% {
+    transform: translateY(15px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+.keyboard {
+  /* background: #7777aa; */
+  width: 15em;
+  padding: 30px 14px;
+  font-size: 30px;
+  box-sizing: border-box;
+  flex-direction: column;
+}
+
+.row {
+  width: 90%;
+  justify-content: space-around;
+}
+.btn,
+.fnc {
+  width: 100px;
+  height: 100px;
+  transition: 0.1s;
+  cursor: pointer;
+  color: white;
+}
+
+.btn .b,
+.fnc .b {
+  width: 100%;
+  height: 100%;
+}
+
+.btn:hover .b,
+.fnc:hover .b {
+  transform: scale(0.9);
+  background: rgba(253, 253, 253, 0.1);
+  border-radius: 20px;
+  font-size: 2em;
+}
+
+.block {
+  pointer-events: none;
+  color: rgb(248, 86, 86);
+}
+
+.block2 {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.deactivation {
+  color: rgba(255, 255, 255, 0.486);
+  pointer-events: none;
+}
+
+.turnOff {
+  color: transparent;
+  background: rgb(20, 20, 20);
+}
+
+.turnOff::before {
+  content: "";
+}
